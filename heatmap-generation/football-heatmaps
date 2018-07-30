@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from moviepy.editor import *
 
 f = open("../raw-data/footballData.txt","r").read().split("PLAYERSPLIT")
 
@@ -95,3 +96,13 @@ for season in seasons:
     plt.close('all')
     n+=1
 
+base_text = "graph_"
+
+y = []
+
+for x in list(range(0,96)):
+    y.append(base_text + str(x) + ".jpg")
+
+clip = ImageSequenceClip(y, fps=6)
+
+clip.write_videofile('footballHeatmap.mp4')
