@@ -106,3 +106,4 @@ for x in list(range(0,96)):
 clip = ImageSequenceClip(y, fps=6)
 
 clip.write_videofile('footballHeatmap.mp4')
+clip.write_gif('footballHeatmap.gif')
